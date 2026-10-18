@@ -1,70 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shahzaib | AR Developer & Digital Creator</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #0f172a; color: #f8fafc; line-height: 1.6; }
-        header { background: linear-gradient(135deg, #1e293b, #0f172a); padding: 4rem 2rem; text-align: center; border-bottom: 1px solid #334155; }
-        header h1 { font-size: 2.5rem; color: #38bdf8; margin-bottom: 0.5rem; }
-        header p { font-size: 1.2rem; color: #94a3b8; }
-        .container { max-width: 1000px; margin: 0 auto; padding: 3rem 1.5rem; }
-        section { margin-bottom: 3rem; }
-        h2 { font-size: 1.8rem; margin-bottom: 1.5rem; color: #38bdf8; border-bottom: 2px solid #334155; padding-bottom: 0.5rem; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-        .card { background: #1e293b; padding: 1.5rem; border-radius: 12px; border: 1px solid #334155; transition: transform 0.3s; }
-        .card:hover { transform: translateY(-5px); }
-        .card h3 { color: #f1f5f9; margin-bottom: 0.75rem; }
-        .card p { color: #94a3b8; font-size: 0.95rem; }
-        .btn { display: inline-block; background: #0ea5e9; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 1rem; transition: background 0.3s; }
-        .btn:hover { background: #0284c7; }
-        footer { text-align: center; padding: 2rem; background: #090d16; color: #64748b; border-top: 1px solid #1e293b; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shahzaib | AR Developer & Snapchat Lens Creator</title>
+<meta name="description" content="Freelance AR developer building custom Snapchat lenses, AR mini-games and 3D product try-ons for brands. 1.5M+ organic plays.">
+<meta property="og:title" content="Shahzaib | AR Developer & Snapchat Lens Creator">
+<meta property="og:description" content="Custom Snapchat lenses, AR mini-games and 3D try-ons. 1.5M+ organic plays.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E👻%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F3F1FA; --ink:#17142E; --muted:#5B5876; --line:#D9D5EC;
+  --snap:#FFE53B; --pink:#E8346F; --white:#fff;
+  --display:'Bricolage Grotesque','Segoe UI',Arial,sans-serif;
+  --body:'Instrument Sans','Segoe UI',Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.65;-webkit-font-smoothing:antialiased}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--pink);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 1.5rem}
+h1,h2,h3{font-family:var(--display);line-height:1.08;letter-spacing:-.02em}
+h2{font-size:clamp(2rem,4vw,2.9rem);font-weight:800;margin-bottom:1rem}
+h3{font-size:1.35rem;font-weight:600}
+.lead{color:var(--muted);max-width:56ch}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.85rem 1.5rem;border-radius:999px;font-weight:600;font-size:1rem;text-decoration:none;border:2px solid var(--ink);transition:transform .15s,background .15s,color .15s;cursor:pointer}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--ink);color:var(--white)}
+.btn-primary:hover{background:var(--pink);border-color:var(--pink)}
+.btn-ghost{background:transparent;color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--white)}
+.btn-snap{background:var(--snap);color:var(--ink);border-color:var(--snap)}
+.btn-snap:hover{background:var(--white);border-color:var(--white)}
+.btn-wa{background:transparent;color:var(--white);border-color:var(--white)}
+.btn-wa:hover{background:var(--white);color:var(--ink)}
+
+/* Viewfinder corners: the one signature motif */
+.vf{position:relative;--c:var(--ink);--s:26px;--t:3px}
+.vf::before{content:"";position:absolute;inset:-14px;pointer-events:none;
+  background:
+   linear-gradient(var(--c),var(--c)) top left/var(--s) var(--t),
+   linear-gradient(var(--c),var(--c)) top left/var(--t) var(--s),
+   linear-gradient(var(--c),var(--c)) top right/var(--s) var(--t),
+   linear-gradient(var(--c),var(--c)) top right/var(--t) var(--s),
+   linear-gradient(var(--c),var(--c)) bottom left/var(--s) var(--t),
+   linear-gradient(var(--c),var(--c)) bottom left/var(--t) var(--s),
+   linear-gradient(var(--c),var(--c)) bottom right/var(--s) var(--t),
+   linear-gradient(var(--c),var(--c)) bottom right/var(--t) var(--s);
+  background-repeat:no-repeat}
+
+/* Nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(243,241,250,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:var(--display);font-weight:800;font-size:1.25rem;text-decoration:none;letter-spacing:-.02em}
+.nav ul{display:flex;gap:1.75rem;list-style:none;align-items:center}
+.nav ul a{text-decoration:none;font-weight:500;color:var(--muted)}
+.nav ul a:hover{color:var(--ink)}
+.nav .btn{padding:.55rem 1.1rem;font-size:.95rem}
+
+/* Hero */
+.hero{padding:5rem 0 6rem}
+.hero .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:4rem;align-items:center}
+.hero h1{font-size:clamp(2.8rem,7vw,5.2rem);font-weight:800}
+.hero h1 span{display:block;color:var(--pink)}
+.hero .lead{margin:1.5rem 0 2rem;font-size:1.2rem}
+.cta-row{display:flex;gap:.9rem;flex-wrap:wrap}
+.phone{justify-self:center;width:100%;max-width:300px;aspect-ratio:9/16;border-radius:28px;overflow:hidden;background:var(--ink);box-shadow:0 30px 60px -25px rgba(23,20,46,.55)}
+.phone video,.phone .ph{width:100%;height:100%;object-fit:cover}
+.hero .vf::before{animation:lock 1.1s cubic-bezier(.2,.8,.2,1) both}
+@keyframes lock{from{inset:-70px;opacity:0}to{inset:-14px;opacity:1}}
+
+/* Stats */
+.stats{background:var(--ink);color:var(--white);padding:2.5rem 0}
+.stats .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.stat b{display:block;font-family:var(--display);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:var(--snap);line-height:1.1}
+.stat span{color:#C9C5E3;font-size:.98rem}
+
+/* Sections */
+section{padding:6rem 0}
+.about .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:4rem}
+.about p{color:var(--muted);margin-bottom:1.1rem;max-width:62ch}
+.about p strong{color:var(--ink)}
+.skills{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem}
+.skills li{list-style:none;border:1.5px solid var(--line);background:var(--white);padding:.3rem .9rem;border-radius:999px;font-size:.92rem;font-weight:500}
+
+/* Services */
+.services{background:var(--white)}
+.svc{display:grid;grid-template-columns:repeat(3,1fr);margin-top:3rem;border-top:2px solid var(--ink)}
+.svc article{padding:2rem 2rem 0 0}
+.svc article+article{padding-left:2rem;border-left:1px solid var(--line)}
+.svc .ico{font-size:2rem;margin-bottom:1rem}
+.svc p{color:var(--muted);margin:.7rem 0 1rem}
+.svc small{font-weight:600;font-size:.92rem}
+
+/* Work */
+.work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3.5rem;margin-top:3rem}
+.lens .frame{aspect-ratio:9/12;background:var(--ink);border-radius:6px;overflow:hidden;margin:14px}
+.lens .frame video,.lens .ph{width:100%;height:100%;object-fit:cover}
+.ph{display:grid;place-items:center;text-align:center;color:#C9C5E3;padding:2rem;font-size:.95rem;background:repeating-linear-gradient(135deg,#1f1b3d,#1f1b3d 12px,#25214a 12px,#25214a 24px)}
+.lens h3{margin:1.75rem 0 .4rem}
+.lens p{color:var(--muted);margin-bottom:1.1rem}
+.meta{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+
+/* CTA */
+.contact{background:var(--ink);color:var(--white)}
+.contact .wrap{text-align:center;max-width:760px}
+.contact h2{font-size:clamp(2.2rem,5vw,3.6rem)}
+.contact .lead{color:#C9C5E3;margin:0 auto 2.2rem}
+.contact .cta-row{justify-content:center}
+.links{margin-top:2.5rem;display:flex;gap:1.75rem;justify-content:center;flex-wrap:wrap;color:#C9C5E3;font-size:.98rem}
+.links a:hover{color:var(--snap)}
+
+footer{background:#0F0D20;color:#9A96BB;text-align:center;padding:1.75rem 1rem;font-size:.9rem}
+
+/* Responsive */
+@media (max-width:900px){
+  .hero{padding:3.5rem 0 4.5rem}
+  .hero .wrap,.about .wrap{grid-template-columns:1fr;gap:3rem}
+  .phone{max-width:260px}
+  .svc{grid-template-columns:1fr}
+  .svc article,.svc article+article{padding:1.75rem 0;border-left:0;border-bottom:1px solid var(--line)}
+  .work-grid{grid-template-columns:1fr}
+  section{padding:4.5rem 0}
+}
+@media (max-width:640px){
+  .nav ul li:not(:last-child){display:none}
+  .stats .wrap{grid-template-columns:1fr;gap:1.4rem}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero .vf::before{animation:none}
+  .btn{transition:none}
+}
+</style>
 </head>
 <body>
 
-    <header>
-        <h1>Shahzaib</h1>
-        <p>AR Developer & Snapchat Lens Creator | Helping Brands Grow with Immersive Filters</p>
-        <a href="#contact" class="btn">Get in Touch</a>
-    </header>
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a href="#top" class="logo">Shahzaib</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#contact" class="btn btn-primary">Hire me</a></li>
+    </ul>
+  </div>
+</nav>
 
-    <div class="container">
-        <section>
-            <h2>About Me</h2>
-            <p>I am a passionate AR Developer specializing in building interactive Snapchat Lenses, face filters, and 3D web experiences. With over 1.5M+ organic plays across my custom lenses, I help brands and businesses engage their audiences through cutting-edge augmented reality.</p>
-        </section>
+<main id="top">
 
-        <section>
-            <h2>Featured AR Projects</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Speed Marker Run</h3>
-                    <p>An action-packed interactive Snapchat minigame lens designed for high user engagement and retention.</p>
-                </div>
-                <div class="card">
-                    <h3>Pool Aim Play</h3>
-                    <p>An immersive physics-based gaming lens that attracted massive viral gameplay interactions.</p>
-                </div>
-                <div class="card">
-                    <h3>Brand Custom Filters</h3>
-                    <p>Tailor-made AR face filters and logo integrations designed specifically for product branding and marketing.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact">
-            <h2>Work With Me</h2>
-            <p>Want a custom Snapchat AR lens for your brand, business, or upcoming campaign? Let's connect!</p>
-            <a href="mailto:your-email@example.com" class="btn">Hire Me / Contact</a>
-        </section>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Your brand, live in <span>augmented reality.</span></h1>
+        <p class="lead">I’m Shahzaib, an AR developer and Snapchat Lens creator. I build custom filters, mini-games and 3D brand experiences that earned 1.5M+ organic plays.</p>
+        <div class="cta-row">
+          <a href="#work" class="btn btn-primary">Try my lenses</a>
+          <a href="#contact" class="btn btn-ghost">Request a custom lens</a>
+        </div>
+      </div>
+      <div class="vf">
+        <div class="phone">
+          <!-- Video ka naam apni file ke mutabiq rakhein. Behtar hai file ka naam chota kar lein: speed-marker-run.mp4 -->
+          <video autoplay muted loop playsinline preload="metadata" aria-label="Speed Marker Run lens gameplay">
+            <source src="WhatsApp Video 2026-10-18 at 1.35.26 PM.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
     </div>
+  </header>
 
-    <footer>
-        <p>&copy; 2026 Shahzaib AR Studio. All rights reserved.</p>
-    </footer>
+  <!-- STATS -->
+  <div class="stats">
+    <div class="wrap">
+      <div class="stat"><b>1.5M+</b><span>Organic lens plays</span></div>
+      <div class="stat"><b>0</b><span>Ad spend behind those plays</span></div>
+      <div class="stat"><b>Lens Studio</b><span>Where every lens is built and optimized</span></div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="wrap">
+      <h2>I build reasons to play, share and remember your brand.</h2>
+      <div>
+        <p>I’m a freelance AR developer and Snapchat Lens creator specializing in <strong>Lens Studio</strong>. I design and develop interactive lenses, from addictive mini-games to polished 3D product experiences.</p>
+        <p>My lenses have passed <strong>1.5 million organic plays</strong>. People opened them, played them and sent them to friends. That’s what I bring to brand work: an instinct for what makes an AR experience go viral, which is instant clarity, a satisfying interaction and a moment worth sharing.</p>
+        <p>Launching a product, running a campaign or reaching a younger audience? I’ll turn your idea into a lens people actually play.</p>
+        <ul class="skills">
+          <li>Lens Studio</li><li>3D optimization</li><li>JavaScript scripting</li><li>Face and world tracking</li><li>Game mechanics</li><li>Brand-focused AR design</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="wrap">
+      <h2>What I build for brands</h2>
+      <p class="lead">Three kinds of lenses, each made to get your audience to open it, use it and share it.</p>
+      <div class="svc">
+        <article>
+          <div class="ico" aria-hidden="true">🎭</div>
+          <h3>Custom brand filters</h3>
+          <p>Face and world lenses with your logo, colors and products, designed to feel native to Snapchat instead of like an ad.</p>
+          <small>Best for campaigns, events and launches</small>
+        </article>
+        <article>
+          <div class="ico" aria-hidden="true">🎮</div>
+          <h3>AR mini-games</h3>
+          <p>Score-chasing, skill-based games with real replay value. Players stay longer and send the lens to friends.</p>
+          <small>Best for engagement and viral reach</small>
+        </article>
+        <article>
+          <div class="ico" aria-hidden="true">👟</div>
+          <h3>3D product try-ons</h3>
+          <p>Let customers try before they buy. Eyewear, accessories and wearables, tested in seconds from the camera.</p>
+          <small>Best for e-commerce and retail</small>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section id="work">
+    <div class="wrap">
+      <h2>Featured lenses</h2>
+      <p class="lead">Don’t just watch. Open them on Snapchat and play.</p>
+      <div class="work-grid">
+
+        <article class="lens vf">
+          <div class="frame">
+            <video controls playsinline preload="metadata" aria-label="Speed Marker Run demo">
+              <source src="WhatsApp Video 2026-10-18 at 1.35.26 PM.mp4" type="video/mp4">
+            </video>
+          </div>
+          <h3>Speed Marker Run</h3>
+          <p>A fast-paced run-and-dodge game you play with your camera.</p>
+          <div class="meta">
+            <!-- Yahan apni asli lens ka link lagayen -->
+            <a href="https://www.snapchat.com" target="_blank" rel="noopener" class="btn btn-primary">Try on Snapchat</a>
+            <!-- <strong>XXXK plays</strong> -->
+          </div>
+        </article>
+
+        <article class="lens vf">
+          <div class="frame">
+            <!-- Video ready ho to .ph div hata kar yahan <video controls><source src="pool-aim-play.mp4" type="video/mp4"></video> lagayen -->
+            <div class="ph">Pool Aim Play<br>demo video coming soon</div>
+          </div>
+          <h3>Pool Aim Play</h3>
+          <p>A precision aiming game that turns your phone into a pool table.</p>
+          <div class="meta">
+            <!-- Yahan apni asli lens ka link lagayen -->
+            <a href="https://www.snapchat.com" target="_blank" rel="noopener" class="btn btn-primary">Try on Snapchat</a>
+            <!-- <strong>XXXK plays</strong> -->
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <h2>Ready to build your brand’s next lens?</h2>
+      <p class="lead">Tell me about your brand and your goals. I’ll reply with a concept and timeline within 24 to 48 hours.</p>
+      <div class="cta-row">
+        <a href="mailto:shahzaib@example.com" class="btn btn-snap">Request a custom lens</a>
+        <!-- Number country code ke sath likhen, jaise 923001234567 -->
+        <a href="https://wa.me/923000000000" target="_blank" rel="noopener" class="btn btn-wa">Message on WhatsApp</a>
+      </div>
+      <div class="links">
+        <a href="mailto:shahzaib@example.com">shahzaib@example.com</a>
+        <a href="https://www.fiverr.com/" target="_blank" rel="noopener">Fiverr</a>
+        <a href="https://www.snapchat.com/" target="_blank" rel="noopener">Snapchat profile</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 Shahzaib AR Studio. Available for freelance projects and long-term collaborations.</p>
+</footer>
 
 </body>
 </html>
